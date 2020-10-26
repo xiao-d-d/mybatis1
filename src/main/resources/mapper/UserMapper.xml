@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--指向接口-->
+<mapper namespace="com.mybatis.mi.mapper.UserMapper">
+    <resultMap id="BaseSesultMapper" type="com.mybatis.mi.entity.User">
+        <id column="user_id" property="userId"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+
+    </resultMap>
+    <insert id="insert" >
+        insert into USER (id,username,password)values ()
+    
+    </insert>
+
+</mapper>
