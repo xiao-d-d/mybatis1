@@ -1,8 +1,12 @@
 package com.mybatis.mi.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class Order {
+public class Order implements Serializable {
+
+    private static final long serialVersionUID=1L;
     /**
      *
      */
@@ -11,6 +15,7 @@ public class Order {
      * 订单号
      */
     private Integer orderNo;
+
     /**
      * 创建时间
      */
@@ -23,6 +28,34 @@ public class Order {
      * 0未支付1支付
      */
     private Integer status;
+
+    private List<OrderItem> OrderItem;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public List<com.mybatis.mi.entity.OrderItem> getOrderItem() {
+        return OrderItem;
+    }
+
+    public void setOrderItem(List<com.mybatis.mi.entity.OrderItem> orderItem) {
+        OrderItem = orderItem;
+    }
 
     public Integer getOrderId() {
         return orderId;
@@ -40,13 +73,7 @@ public class Order {
         this.orderNo = orderNo;
     }
 
-    public Date getcreateDate() {
-        return createDate;
-    }
 
-    public void setcreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
 
     public Integer getUserId() {
         return userId;
