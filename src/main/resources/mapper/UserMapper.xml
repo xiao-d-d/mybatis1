@@ -5,21 +5,26 @@
         <!--指向接口-->
 <mapper namespace="com.mybatis.mi.mapper.UserMapper">
     <resultMap id="BaseSesultMapper" type="com.mybatis.mi.entity.User">
-        <id column="user_id" property="userId"></id>
-        <result column="username" property="username"></result>
-        <result column="password" property="password"></result>
-        <result column="status" property="status"></result>
-
+        <id column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="status" property="status"/>
     </resultMap>
+
     <insert id="insert" >
-        insert into USER (username,password)values (#{user.username},#{user.password})
+        insert into user (username,password) values (#{user.username},#{user.password})
     </insert>
 
+    <!--select需要resultMap-->
     <select id="selectById" resultMap="BaseSesultMapper">
         select user_id,username,password,status
         from user
         where status=0;
     </select>
+
+    <update id="update">
+
+    </update>
 
 
 </mapper>

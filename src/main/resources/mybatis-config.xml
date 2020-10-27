@@ -17,6 +17,11 @@
     </environments>
     <mappers>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/OrderMapper.xml"/>
+        <mapper resource="mapper/CateMapper.xml"/>
+        <mapper resource="mapper/OrderItemMapper.xml"/>
+        <mapper resource="mapper/ProducMapper.xml"/>
+        <mapper resource="mapper/AddresMapper.xml"/>
     </mappers>
 
 </configuration>

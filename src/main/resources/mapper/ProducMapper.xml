@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mi.mapper.ProducMapper">
+    <resultMap id="baseResultMap" type="com.mybatis.mi.entity.Produc">
+        <id property="productId" column="product_id"/>
+        <result property="content" column="content"/>
+        <result property="img" column="img" />
+        <result property="price" column="price"/>
+        <result property="title" column="title"/>
+    </resultMap>
+    <insert id="insert">
+        insert into product (title,content,img,price,cate_id) values
+        (#{produc.title},#{produc.content},#{produc.img},#{produc.price},#{produc.cateId})
+    </insert>
+    <select id="selectListByCate" resultMap="baseResultMap">
+        select product_id,title,content,img,price,create_date,cate_id,status
+        from product where status=0 and cate_id=#{cateId};
+    </select>
+</mapper>
