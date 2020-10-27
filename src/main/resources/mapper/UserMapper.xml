@@ -8,11 +8,18 @@
         <id column="user_id" property="userId"></id>
         <result column="username" property="username"></result>
         <result column="password" property="password"></result>
+        <result column="status" property="status"></result>
 
     </resultMap>
     <insert id="insert" >
-        insert into USER (id,username,password)values ()
-    
+        insert into USER (username,password)values (#{user.username},#{user.password})
     </insert>
+
+    <select id="selectById" resultMap="BaseSesultMapper">
+        select user_id,username,password,status
+        from user
+        where status=0;
+    </select>
+
 
 </mapper>
